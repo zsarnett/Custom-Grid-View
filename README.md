@@ -4,7 +4,7 @@ A testing ground and usable version of the Drag and Drop Grid that is being deve
 
 ## Installation
 
-1. Download the [Custom Drag and Drop Grid View](https://github.com/zsarnett/Custom-Grid-View/releases)
+1. Download the `grid-view.js` file [Custom Drag and Drop Grid View](https://github.com/zsarnett/Custom-Grid-View/releases)
 2. Place the file in your `config/www` folder
 3. Add a resource to your Lovelace Dashboard
 
