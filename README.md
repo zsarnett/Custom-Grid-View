@@ -1,4 +1,4 @@
-# Drag and Drop Grid Custom View (@zsarnett)
+# Drag and Drop Grid Custom View ([@zsarnett](https://github.com/sponsors/zsarnett))
 
 A testing ground and usable version of the Drag and Drop Grid that is being developed for Home Assistant Core Frontend.
 
