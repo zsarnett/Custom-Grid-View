@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-card",
-  "version": "1.3.2",
-  "description": "Lovelace boilerplate-card",
+  "name": "customgridview",
+  "version": "0.0.1",
+  "description": "Custom Grid Drag and Drop",
   "keywords": [
     "home-assistant",
     "homeassistant",
@@ -10,15 +10,17 @@
     "lovelace",
     "custom-cards"
   ],
-  "module": "boilerplate-card.js",
-  "repository": "git@github.com:custom_cards/boilerplate-card.git",
-  "author": "Ian Richardson <iantrich@gmail.com>",
+  "module": "grid-view.js",
+  "author": "Zack Barett <ZackBarett@hey.com>",
   "license": "MIT",
   "dependencies": {
+    "@mdi/js": "^5.8.55",
     "custom-card-helpers": "^1.6.6",
     "home-assistant-js-websocket": "^4.5.0",
     "lit-element": "^2.4.0",
-    "lit-html": "^1.3.0"
+    "lit-grid-layout": "^1.1.13",
+    "lit-html": "^1.3.0",
+    "uuid": "^8.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -41,11 +43,12 @@
     "rollup-plugin-terser": "^5.3.1",
     "rollup-plugin-typescript2": "^0.24.3",
     "rollup-plugin-uglify": "^6.0.4",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "tslib": "^2.0.3"
   },
   "scripts": {
     "start": "rollup -c rollup.config.dev.js --watch",
-    "build": "npm run lint && npm run rollup",
+    "build": "npm run rollup",
     "lint": "eslint src/*.ts",
     "rollup": "rollup -c"
   }
