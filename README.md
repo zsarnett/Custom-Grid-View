@@ -1,119 +1,61 @@
-# Boilerplate Card by [@iantrich](https://www.github.com/iantrich)
+# Drag and Drop Grid Custom View (@zsarnett)
 
-A community driven boilerplate of best practices for Home Assistant Lovelace custom cards
+A testing ground and usable version of the Drag and Drop Grid that is being developed for Home Assistant Core Frontend.
 
-[![GitHub Release][releases-shield]][releases]
-[![License][license-shield]](LICENSE.md)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
+## Installation
 
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
+1. Download the [Custom Drag and Drop Grid View](Release)
+2. Place the file in your `config/www` folder
+3. Add a resource to your Lovelace Dashboard
 
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
+   ```yaml
+   title: Home
+   resources:
+     - url: /local/grid-dnd.js
+       type: module
+   ```
 
-## Support
+## How to use
 
-Hey dude! Help me out for a couple of :beers: or a :coffee:!
-
-[![coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/zJtVxUAgH)
-
-## Options
-
-| Name              | Type    | Requirement  | Description                                 | Default             |
-| ----------------- | ------- | ------------ | ------------------------------------------- | ------------------- |
-| type              | string  | **Required** | `custom:boilerplate-card`                   |
-| name              | string  | **Optional** | Card name                                   | `Boilerplate`       |
-| show_error        | boolean | **Optional** | Show what an error looks like for the card  | `false`             |
-| show_warning      | boolean | **Optional** | Show what a warning looks like for the card | `false`             |
-| entity            | string  | **Optional** | Home Assistant entity ID.                   | `none`              |
-| tap_action        | object  | **Optional** | Action to take on tap                       | `action: more-info` |
-| hold_action       | object  | **Optional** | Action to take on hold                      | `none`              |
-| double_tap_action | object  | **Optional** | Action to take on double tap                | `none`              |
-
-## Action Options
-
-| Name            | Type   | Requirement  | Description                                                                                                                            | Default     |
-| --------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| action          | string | **Required** | Action to perform (more-info, toggle, call-service, navigate url, none)                                                                | `more-info` |
-| navigation_path | string | **Optional** | Path to navigate to (e.g. /lovelace/0/) when action defined as navigate                                                                | `none`      |
-| url             | string | **Optional** | URL to open on click when action is url. The URL will open in a new tab                                                                | `none`      |
-| service         | string | **Optional** | Service to call (e.g. media_player.media_play_pause) when action defined as call-service                                               | `none`      |
-| service_data    | object | **Optional** | Service data to include (e.g. entity_id: media_player.bedroom) when action defined as call-service                                     | `none`      |
-| haptic          | string | **Optional** | Haptic feedback for the [Beta IOS App](http://home-assistant.io/ios/beta) _success, warning, failure, light, medium, heavy, selection_ | `none`      |
-| repeat          | number | **Optional** | How often to repeat the `hold_action` in milliseconds.                                                                                 | `non`       |
-
-## Starting a new card from boilerplate-card
-
-### Step 1
-
-Clone this repository
-
-### Step 2
-
-Install necessary modules (verified to work in node 8.x)
-`yarn install` or `npm install`
-
-### Step 3
-
-Do a test lint & build on the project. You can see available scripts in the package.json
-`npm run build`
-
-### Step 4
-
-Search the repository for all instances of "TODO" and handle the changes/suggestions
-
-### Step 5
-
-Customize to suit your needs and contribute it back to the community
-
-## Starting a new card from boilerplate-card with [devcontainer][devcontainer]
-
-Note: this is available only in vscode ensure you have the [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed.
-
-1. Fork and clone the repository.
-2. Open a [devcontainer][devcontainer] terminal and run `npm start` when it's ready.
-3. The compiled `.js` file will be accessible on
-   `http://127.0.0.1:5000/boilerplate-card.js`.
-4. On a running Home Assistant installation add this to your Lovelace
-   `resources:`
+To change the view to use Drag and Drop Grid, update the Lovelace YAML for that view and add
 
 ```yaml
-- url: 'http://127.0.0.1:5000/boilerplate-card.js'
-  type: module
+type: custom:grid-dnd
 ```
 
-_Change "127.0.0.1" to the IP of your development machine._
+### Example
 
-### Bonus
-
-If you need a fresh test instance you can install a fresh Home Assistant instance inside the devcontainer as well.
-
-1. Run the command `container start`.
-2. Home Assistant will install and will eventually be running on port `9123`
-
-## [Troubleshooting](https://github.com/thomasloven/hass-config/wiki/Lovelace-Plugins)
-
-NB This will not work with node 9.x if you see the following errors try installing node 8.10.0
-
-```yarn install
-yarn install v1.3.2
-[1/4] 🔍  Resolving packages...
-warning rollup-plugin-commonjs@10.1.0: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-commonjs.
-[2/4] 🚚  Fetching packages...
-error @typescript-eslint/eslint-plugin@2.6.0: The engine "node" is incompatible with this module. Expected version "^8.10.0 || ^10.13.0 || >=11.10.1".
-error Found incompatible module
-info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+```yaml
+path: default_view
+type: 'custom:grid-dnd'
+title: Home
+cards: []
 ```
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/custom-cards/boilerplate-card.svg?style=for-the-badge
-[commits]: https://github.com/custom-cards/boilerplate-card/commits/master
-[devcontainer]: https://code.visualstudio.com/docs/remote/containers
-[discord]: https://discord.gg/5e9yvq
-[discord-shield]: https://img.shields.io/discord/330944238910963714.svg?style=for-the-badge
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/c/projects/frontend
-[license-shield]: https://img.shields.io/github/license/custom-cards/boilerplate-card.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/custom-cards/boilerplate-card.svg?style=for-the-badge
-[releases]: https://github.com/custom-cards/boilerplate-card/releases
+> :warning: **I recommend copying your view and modifying the copy instead of modifying your existing dashboard**
+
+> :warning: **Users using YAML mode only will not have a good time :)**
+
+### Notes
+
+* This is not the finished version
+* This version is not the best version
+* This view is bound to change and have breaking changes
+* This will add a large amount of YAML to your view. `layout: {}`
+* This will add a key to every card.
+* Again its not perfect and I will try to update this version as I find better ways.
+
+
+* I have built the everything that this code is using. ie. Lit-Grid-Layout
+   * This means I have complete control over the changes which is good
+   * This also means it may not be the best yet. I am still learning even after 2 years of working with Home Assistant. I will try to perfect the code as you all and myself test this view
+ 
+
+
+** PLEASE BE PATIENT WITH ME ON THIS :smile: **
+
+Add any bugs that you find as issues in this repo. 
+
+THANK YOU!
+
+Consider Sponsoring me as this helps me find the time to develop this! Thank you: https://github.com/sponsors/zsarnett
