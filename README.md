@@ -11,7 +11,7 @@ A testing ground and usable version of the Drag and Drop Grid that is being deve
    ```yaml
    title: Home
    resources:
-     - url: /local/grid-dnd.js
+     - url: /local/grid-view.js
        type: module
    ```
 
