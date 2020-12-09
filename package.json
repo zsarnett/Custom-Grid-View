@@ -10,6 +10,9 @@
     "lovelace",
     "custom-cards"
   ],
+  "files": [
+    "dist"
+  ],
   "module": "grid-view.js",
   "author": "Zack Barett <ZackBarett@hey.com>",
   "license": "MIT",
