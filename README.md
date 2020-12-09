@@ -2,6 +2,8 @@
 
 A testing ground and usable version of the Drag and Drop Grid that is being developed for Home Assistant Core Frontend.
 
+Consider Subscribing to my YouTube Channel for updates on the Grid View: https://www.youtube.com/c/ZackBarett
+
 ## Installation
 
 1. Download the `grid-view.js` file [Custom Drag and Drop Grid View](https://github.com/zsarnett/Custom-Grid-View/releases)
