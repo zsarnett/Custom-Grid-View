@@ -6,7 +6,7 @@ Consider Subscribing to my YouTube Channel for updates on the Grid View: https:/
 
 ## Installation
 
-> :warning: The release on Dec 13th is recommended. Extra code for this was added to this release to make Drag and Drop better!
+> :warning: The 2020.12 Release is recommended. Extra code for this was added to this release to make Drag and Drop better!
 
 1. Download the `grid-view.js` file [Custom Drag and Drop Grid View](https://github.com/zsarnett/Custom-Grid-View/releases)
 2. Place the file in your `config/www` folder
