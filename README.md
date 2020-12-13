@@ -61,3 +61,11 @@ Add any bugs that you find as issues in this repo.
 THANK YOU!
 
 Consider Sponsoring me as this helps me find the time to develop this! Thank you: https://github.com/sponsors/zsarnett
+
+
+Known Issues:
+
+* You can not have empty space between cards
+* Sometimes the place holder isn't aligned correctly
+* Some Cards do not support resizing 
+* Not Mobile Friend
