@@ -24,7 +24,7 @@ const plugins = [
     // the "browser" property in package.json
   }),
   commonjs(),
-  typescript(),
+  typescript({ sourceMap: false }),
   json(),
   babel({
     exclude: 'node_modules/**',
@@ -39,6 +39,7 @@ export default [
     output: {
       dir: 'dist',
       format: 'es',
+      sourcemap: true,
     },
     plugins: [...plugins],
   },

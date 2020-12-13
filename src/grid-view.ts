@@ -2,7 +2,14 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { mdiPlus, mdiResizeBottomRight } from '@mdi/js';
-import { computeCardSize, computeRTL, HomeAssistant, LovelaceCard, LovelaceViewConfig } from 'custom-card-helpers';
+import {
+  computeCardSize,
+  computeRTL,
+  fireEvent,
+  HomeAssistant,
+  LovelaceCard,
+  LovelaceViewConfig,
+} from 'custom-card-helpers';
 import {
   css,
   CSSResult,
@@ -118,6 +125,7 @@ export class GridView extends LitElement {
         .itemRenderer=${this._itemRenderer}
         .layout=${this._layout}
         .columns=${this._columns}
+        .dragHandle=${'.overlay'}
         .dragDisabled=${!this.lovelace?.editMode}
         .resizeDisabled=${!this.lovelace?.editMode}
         @item-changed=${this._saveLayout}
@@ -340,7 +348,7 @@ export class GridView extends LitElement {
   };
 
   private _addCard(): void {
-    this.dispatchEvent(new CustomEvent('ll-add-card'));
+    fireEvent(this, 'll-add-card' as any);
   }
 
   private _updateColumns(): void {

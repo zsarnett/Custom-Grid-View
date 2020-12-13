@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LovelaceConfig } from 'custom-card-helpers/dist/types';
 
 export const replaceView = (config: LovelaceConfig, viewIndex: number, viewConfig: any): LovelaceConfig => ({

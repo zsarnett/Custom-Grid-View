@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { mdiDelete, mdiPencil } from '@mdi/js';
-import { computeCardSize, HomeAssistant, LovelaceCard } from 'custom-card-helpers';
+import { computeCardSize, fireEvent, HomeAssistant, LovelaceCard } from 'custom-card-helpers';
 import { css, CSSResult, customElement, LitElement, property, queryAssignedNodes } from 'lit-element';
 import { html, TemplateResult } from 'lit-html';
 
@@ -41,11 +43,11 @@ export class HuiGridCardOptions extends LitElement {
   }
 
   private _editCard(): void {
-    this.dispatchEvent(new CustomEvent('ll-edit-card', { detail: { path: this.path } }));
+    fireEvent(this, 'll-edit-card' as any, { path: this.path });
   }
 
   private _deleteCard(): void {
-    this.dispatchEvent(new CustomEvent('ll-delete-card', { detail: { path: this.path } }));
+    fireEvent(this, 'll-delete-card' as any, { path: this.path });
   }
 
   static get styles(): CSSResult {
