@@ -5,8 +5,23 @@ A testing ground and usable version of the Drag and Drop Grid that is being deve
 Consider Subscribing to my YouTube Channel for updates on the Grid View: https://www.youtube.com/c/ZackBarett
 
 ## Installation
-
 > :warning: The 2020.12 Release is recommended. Extra code for this was added to this release to make Drag and Drop better!
+
+### Installation with `hacs`
+
+1. Make sure the [HACS](https://github.com/custom-components/hacs) component is installed and working.
+2. Add https://github.com/zsarnett/Custom-Grid-View as a custom repository
+3. Add the configuration to your `ui-lovelace.yaml`
+
+   ```yaml
+   resources:
+     - url: /hacsfiles/Custom-Grid-View/grid-view.js
+       type: module
+   ```
+
+4. Refresh home-assistant.  
+
+### Manual Installation
 
 1. Download the `grid-view.js` file [Custom Drag and Drop Grid View](https://github.com/zsarnett/Custom-Grid-View/releases)
 2. Place the file in your `config/www` folder
@@ -17,7 +32,7 @@ Consider Subscribing to my YouTube Channel for updates on the Grid View: https:/
    resources:
      - url: /local/grid-view.js
        type: module
-   ```
+   ``` 
 
 ## How to use
 
