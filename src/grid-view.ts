@@ -121,6 +121,8 @@ export class GridView extends LitElement {
       </div>
       <lit-grid-layout
         rowHeight="40"
+        .containerPadding=${[8, 8]}
+        .margin=${[8, 8]}
         .resizeHandle=${RESIZE_HANDLE}
         .itemRenderer=${this._itemRenderer}
         .layout=${this._layout}
@@ -207,7 +209,7 @@ export class GridView extends LitElement {
 
     const cards = this._config.cards!.map(card => {
       if (card.layout?.key) {
-        return;
+        return card;
       }
       card = { ...card, layout: { key: card.layout?.key || uuidv4() } };
       return card;
@@ -348,7 +350,7 @@ export class GridView extends LitElement {
   };
 
   private _addCard(): void {
-    fireEvent(this, 'll-add-card' as any);
+    fireEvent(this, 'll-create-card' as any);
   }
 
   private _updateColumns(): void {
